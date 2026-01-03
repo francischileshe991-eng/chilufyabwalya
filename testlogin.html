@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNZA SIS | Login</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f2f2;
+}
+
+/* Top bar */
+.topbar {
+  background: #0b6b0b;
+  color: white;
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar span {
+  font-weight: bold;
+}
+
+/* Main card */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.card {
+  background: white;
+  width: 900px;
+  border-radius: 30px;
+  display: flex;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+/* Left login */
+.login {
+  flex: 1;
+  padding: 40px;
+}
+
+.login h2 {
+  color: #0b6b0b;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.input-group span {
+  background: #eee;
+  padding: 10px;
+  width: 40px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #0b6b0b;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #095a09;
+}
+
+.forgot {
+  text-align: center;
+  margin-top: 10px;
+  color: #0b6b0b;
+  font-size: 14px;
+}
+
+/* Right side */
+.right {
+  flex: 1;
+  padding: 40px;
+  background: #fff;
+}
+
+.right h3 {
+  color: #0b6b0b;
+}
+
+.right button {
+  margin-top: 10px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 13px;
+  color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <span>University of Zambia - Student Information System</span>
+  <span>Login | Reset Password | FAQs | HELSB</span>
+</div>
+
+<div class="wrapper">
+  <div class="card">
+
+    <!-- LEFT -->
+    <div class="login">
+      <h2>Current Students and Staff</h2>
+      <h3 style="text-align:center;">Login</h3>
+
+      <div class="input-group">
+        <span>👤</span>
+        <input type="text" id="studentId" placeholder="Student ID / Username">
+      </div>
+
+      <div class="input-group">
+        <span>🔑</span>
+        <input type="password" id="password" placeholder="Password">
+      </div>
+
+      <button onclick="login()">Log In</button>
+
+      <div class="forgot">Forgot password?</div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+      <h3>Prospective Students</h3>
+      <p>
+        You can apply online for admission, or check the status of your
+        application using the Online Application Portal (OAP).
+      </p>
+      <button>Apply Online</button>
+
+      <h3 style="margin-top:40px;">Accommodation Application</h3>
+      <p>
+        Apply online for accommodation using your UNZA student number.
+      </p>
+      <button>Apply for Accommodation</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  © 2025 - The University of Zambia - Student Information System v2.0.Revision
+</div>
+
+<script>
+function login() {
+  const id = document.getElementById("studentId").value;
+  const pass = document.getElementById("password").value;
+
+  if (id === "" || pass === "") {
+    alert("Please enter Student ID and Password");
+    return;
+  }
+
+  // SIMPLE AUTH RULE
+  if (id === pass) {
+    localStorage.setItem("studentId", id);
+    window.location.href = "testhome.html";
+  } else {
+    alert("Invalid login credentials");
+  }
+}
+</script>
+
+</body>
+</html>

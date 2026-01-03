@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Information System</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+/* Top header */
+.top-header {
+  background: #e6e6e6;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+/* Navigation bar */
+.navbar {
+  background: #0b6b0b;
+  padding: 8px 20px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.container {
+  padding: 30px 40px;
+}
+
+/* Page title */
+.page-title {
+  color: #0b6b0b;
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.welcome {
+  margin-bottom: 30px;
+}
+
+/* Cards section */
+.cards {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.card {
+  padding: 25px;
+  border-radius: 25px;
+  color: #fff;
+  width: 45%;
+}
+
+.card.orange {
+  background: #ff9800;
+}
+
+.card.green {
+  background: #0b6b0b;
+}
+
+.card h3 {
+  margin-top: 0;
+  text-decoration: underline;
+}
+
+/* Main content layout */
+.main {
+  display: flex;
+  gap: 40px;
+}
+
+/* Student info */
+.student-info {
+  flex: 3;
+}
+
+.student-id {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: -20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+td:first-child {
+  font-weight: bold;
+  width: 35%;
+}
+
+.negative {
+  color: red;
+  font-weight: bold;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1;
+}
+
+.quick-guides {
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+
+.quick-guides h4 {
+  background: #0b6b0b;
+  color: white;
+  padding: 10px;
+  margin: -15px -15px 15px -15px;
+  text-align: center;
+}
+
+.guide {
+  margin-bottom: 15px;
+  color: #0b6b0b;
+}
+
+/* Footer */
+.footer {
+  margin-top: 60px;
+  border-top: 3px solid #0b6b0b;
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-header">
+  <div><strong>Student Information System</strong></div>
+  <div>Welcome 2022055080. You are logged in as student <span style="color:#c60">[Logout]</span></div>
+</div>
+
+<div class="navbar">
+  <a href="#">Dashboard</a>
+  <a href="#">My Bio data</a>
+  <a href="#">My Accomodation</a>
+  <a href="#">My Finances</a>
+  <a href="#">My Registration</a>
+  <a href="testresult.html">My Results</a>
+  <a href="#">My Research</a>
+  <a href="#">My E-Learning</a>
+  <a href="#">My Exam Slip</a>
+</div>
+
+<div class="container">
+  <div class="page-title">Change password</div>
+  <div class="welcome">Welcome, <strong>CHILUFYA BWALYA</strong></div>
+
+  <div class="cards">
+    <div class="card orange">
+      <h3>📣 Dear Student,</h3>
+      <p>
+        We would like to thank all students for your positive participation in the
+        Student Evaluation of Teaching (SET) exercise.
+        We encourage students who have not yet printed their exam slip to do so
+        from the assistant registrar in their respective school.
+      </p>
+    </div>
+
+    <div class="card green">
+      <h3>📣 Special Offer !!!!</h3>
+      <p>
+        100% Online courses for UNZA students at <strong>K250</strong> only.
+      </p>
+      <p>
+        Get yourself a certificate in:
+        <ol>
+          <li>Digital Marketing</li>
+          <li>Monitoring and Evaluation</li>
+          <li>Project Management and Planning</li>
+        </ol>
+      </p>
+      <p>
+        Tel: 0211295038<br>
+        Cell: 0956 546537<br>
+        Email: train@unza.zm
+      </p>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="student-info">
+      <div class="student-id">2022055080</div>
+
+      <table>
+        <tr><td>Student ID:</td><td></td></tr>
+        <tr><td>School:</td><td>HUMANITIES AND SOCIAL SCIENCES</td></tr>
+        <tr><td>Program:</td><td>BACHELOR OF ARTS - PSYCHOLOGY</td></tr>
+        <tr><td>Student academic session:</td><td>GER 2024 Session</td></tr>
+        <tr><td>Registration status:</td><td>Registered</td></tr>
+        <tr><td>Student Sponsor:</td><td>SELF-SPONSORED</td></tr>
+        <tr><td>Outstanding balances:</td><td class="negative">K 5,684.00</td></tr>
+        <tr><td>Remark:</td><td></td></tr>
+      </table>
+    </div>
+
+    <div class="sidebar">
+      <div class="quick-guides">
+        <h4>📣 Student Quick Guides</h4>
+        <div class="guide">🎓 E-learning<br>Tip: How to login to Moodle</div>
+        <div class="guide">🎓 E-learning<br>Tip: How to upload assignments on Moodle</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  The University of Zambia - Student Information System 2.0.Revision:
+</div>
+
+</body>
+</html>

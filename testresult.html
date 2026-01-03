@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIS | Examination Results</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+/* Top */
+.top-header {
+  background: #e6e6e6;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.navbar {
+  background: #0b6b0b;
+  padding: 8px 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Page */
+.container {
+  padding: 25px 40px;
+}
+
+.student-meta p {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+/* Section headers */
+.section-title {
+  background: #0b6b0b;
+  color: white;
+  padding: 8px 12px;
+  font-weight: bold;
+  margin: 25px 0 10px;
+}
+
+/* Info note */
+.note {
+  background: #dff1f9;
+  border-radius: 5px;
+  padding: 12px;
+  color: #2c5d75;
+  margin-bottom: 15px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th {
+  background: #e6e6e6;
+  padding: 10px;
+  border-bottom: 2px solid #aaa;
+  text-align: left;
+}
+
+td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.group {
+  border-top: 2px solid #888;
+}
+
+.grade {
+  color: blue;
+  font-weight: bold;
+}
+
+.comment {
+  color: red;
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  margin-top: 40px;
+  border-top: 3px solid #0b6b0b;
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-header">
+  <div><strong>Student Information System</strong></div>
+  <div>Welcome 2022055080. You are logged in as student <span style="color:#c60">[Logout]</span></div>
+</div>
+
+<div class="navbar">
+  <a href="testhome.html">Dashboard</a>
+  <a href="#">My Bio data</a>
+  <a href="#">My Accomodation</a>
+  <a href="#">My Finances</a>
+  <a href="#">My Registration</a>
+  <a href="#">My Results</a>
+  <a href="#">My Research</a>
+  <a href="#">My E-Learning</a>
+  <a href="#">My Exam Slip</a>
+</div>
+
+<div class="container">
+
+  <div class="student-meta">
+    <p><strong>Computer number:</strong> 2022055080</p>
+    <p><strong>Names:</strong> CHILUFYA BWALYA</p>
+    <p><strong>Gender:</strong> M</p>
+  </div>
+
+  <div class="section-title">
+    Continuous Assessment Results [Current Academic Year]
+  </div>
+
+  <div class="section-title">
+    Examination Results & GPA Computation
+  </div>
+
+  <div class="note">
+    Note: GPA per Academic Year is computed by
+    ((Course Credits * grade points) / sum of credits)
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ACADEMIC YEAR</th>
+        <th>PROGRAMME</th>
+        <th>YEAR OF STUDY</th>
+        <th>COURSE</th>
+        <th>GRADE</th>
+        <th>COMMENT</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- 3RD YEAR -->
+      <tr class="group">
+        <td>GER 20241</td>
+        <td>BACHELOR OF ARTS - PSYCHOLOGY</td>
+        <td>3RD YEAR</td>
+        <td>PSG 3310 - PSYCHOMETRICS AND ASSESSMENTS</td>
+        <td class="grade">B</td>
+        <td class="comment">CLEAR PASS</td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td>
+        <td>PSG 9410 - INDUSTRIAL &amp; ORGANISATIONAL PSYCHOLOGY</td>
+        <td class="grade">B</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td>
+        <td>PSG 9214 - COUNSELLING PSYCHOLOGY</td>
+        <td class="grade">C+</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td>
+        <td>PSG 3310 - CRITICAL THINKING</td>
+        <td class="grade">B</td>
+        <td></td>
+
+      <!-- 2ND YEAR -->
+      <tr class="group">
+        <td>GER 20231</td>
+        <td>BACHELOR OF ARTS - PSYCHOLOGY</td>
+        <td>2ND YEAR</td>
+        <td>PSY 2110 - CONTEMPORARY SOCIAL PROBLEMS</td>
+        <td class="grade">C+</td>
+        <td class="comment">CLEAR PASS</td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td>
+        <td>SDS 2414 - RESEARCH METHODS IN SOCIAL SCIENCES</td>
+        <td class="grade">B</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td>
+        <td>PSG 2210 - FOUNDATIONS OF RESEARCH METHODS</td>
+        <td class="grade">C+</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td>
+        <td>PSY 2110 - BASIC STRUCTURES AND PROCESSES - THEORY AND APPLICATION</td>
+        <td class="grade">C</td>
+        <td></td>
+
+      <!-- 1ST YEAR -->
+      <tr class="group">
+        <td>GER 20221</td>
+        <td>BACHELOR OF ARTS - PSYCHOLOGY</td>
+        <td>1ST YEAR</td>
+        <td>PAM 1025 - INTRODUCTION TO PUBLIC ADMINISTRATION</td>
+        <td class="grade">B</td>
+        <td class="comment">CLEAR PASS</td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td>
+        <td>POL 1015 - INTRODUCTION TO POLITICAL SCIENCE</td>
+        <td class="grade">B+</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td>
+        <td>PSG 1110 - INTRODUCTION TO PSYCHOLOGY</td>
+        <td class="grade">B</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td>
+        <td>BBA 1110 - PRINCIPLES OF BUSINESS ADMINISTRATION</td>
+        <td class="grade">C+</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td>
+        <td>DEM 1110 - INTRODUCTION TO DEMOGRAPHY</td>
+        <td class="grade">B</td>
+        <td></td>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="footer">
+  The University of Zambia - Student Information System 2.0.Revision:
+</div>
+
+</body>
+</html>
