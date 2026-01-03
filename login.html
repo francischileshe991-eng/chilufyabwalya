@@ -181,10 +181,11 @@ function login() {
     return;
   }
 
-  // SIMPLE AUTH RULE
+  // SIMPLE AUTH RULE (demo)
   if (id === pass) {
-    localStorage.setItem("studentId", id);
-    window.location.href = "index.html";
+    localStorage.setItem("loggedIn", "true");   // ✅ REQUIRED FLAG
+    localStorage.setItem("studentId", id);     // store ID
+    window.location.href = "index.html";       // go to dashboard
   } else {
     alert("Invalid login credentials");
   }
@@ -193,4 +194,5 @@ function login() {
 
 </body>
 </html>
+
 
