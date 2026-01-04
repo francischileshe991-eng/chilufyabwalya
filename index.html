@@ -4,11 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Information System</title>
-<script>
-if (!localStorage.getItem("loggedIn")) {
-  window.location.href = "login.html";
-}
-</script>
+
+<!-- Font Awesome (only used in announcements & guides) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
 body {
@@ -33,6 +31,7 @@ body {
   padding: 8px 20px;
 }
 
+
 .navbar a {
   color: #fff;
   text-decoration: none;
@@ -41,6 +40,7 @@ body {
   font-size: 14px;
 }
 
+/* Container */
 .container {
   padding: 30px 40px;
 }
@@ -56,7 +56,7 @@ body {
   margin-bottom: 30px;
 }
 
-/* Cards section */
+/* Cards */
 .cards {
   display: flex;
   gap: 30px;
@@ -83,7 +83,11 @@ body {
   text-decoration: underline;
 }
 
-/* Main content layout */
+.card h3 i {
+  margin-right: 8px;
+}
+
+/* Main layout */
 .main {
   display: flex;
   gap: 40px;
@@ -138,9 +142,17 @@ td:first-child {
   text-align: center;
 }
 
+.quick-guides h4 i {
+  margin-right: 6px;
+}
+
 .guide {
   margin-bottom: 15px;
   color: #0b6b0b;
+}
+
+.guide i {
+  margin-right: 8px;
 }
 
 /* Footer */
@@ -158,13 +170,17 @@ td:first-child {
 
 <div class="top-header">
   <div><strong>Student Information System</strong></div>
-  <div>Welcome 2022055080. You are logged in as student <span style="color:#c60">[Logout]</span></div>
+  <div>
+    Welcome 2022055080. You are logged in as student
+    <span style="color:#c60; cursor:pointer;">[Logout]</span>
+  </div>
 </div>
 
+<!-- NAVBAR (TEXT ONLY) -->
 <div class="navbar">
   <a href="#">Dashboard</a>
   <a href="#">My Bio data</a>
-  <a href="#">My Accomodation</a>
+  <a href="#">My Accommodation</a>
   <a href="#">My Finances</a>
   <a href="#">My Registration</a>
   <a href="results.html">My Results</a>
@@ -179,7 +195,7 @@ td:first-child {
 
   <div class="cards">
     <div class="card orange">
-      <h3>📣 Dear Student,</h3>
+      <h3><i class="fa fa-bullhorn"></i> Dear Student</h3>
       <p>
         We would like to thank all students for your positive participation in the
         Student Evaluation of Teaching (SET) exercise.
@@ -189,18 +205,15 @@ td:first-child {
     </div>
 
     <div class="card green">
-      <h3>📣 Special Offer !!!!</h3>
+      <h3><i class="fa fa-bullhorn"></i> Special Offer</h3>
       <p>
         100% Online courses for UNZA students at <strong>K250</strong> only.
       </p>
-      <p>
-        Get yourself a certificate in:
-        <ol>
-          <li>Digital Marketing</li>
-          <li>Monitoring and Evaluation</li>
-          <li>Project Management and Planning</li>
-        </ol>
-      </p>
+      <ol>
+        <li>Digital Marketing</li>
+        <li>Monitoring and Evaluation</li>
+        <li>Project Management and Planning</li>
+      </ol>
       <p>
         Tel: 0211295038<br>
         Cell: 0956 546537<br>
@@ -227,21 +240,27 @@ td:first-child {
 
     <div class="sidebar">
       <div class="quick-guides">
-        <h4>📣 Student Quick Guides</h4>
-        <div class="guide">🎓 E-learning<br>Tip: How to login to Moodle</div>
-        <div class="guide">🎓 E-learning<br>Tip: How to upload assignments on Moodle</div>
+        <h4><i class="fa fa-bullhorn"></i> Student Quick Guides</h4>
+
+        <div class="guide">
+          <i class="fa fa-graduation-cap"></i>
+          <strong>E-learning</strong><br>
+          Tip: How to login to Moodle
+        </div>
+
+        <div class="guide">
+          <i class="fa fa-graduation-cap"></i>
+          <strong>E-learning</strong><br>
+          Tip: How to upload assignments on Moodle
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <div class="footer">
-  The University of Zambia - Student Information System 2.0.Revision:
+  The University of Zambia - Student Information System 2.0
 </div>
 
 </body>
 </html>
-
-
-
-
