@@ -165,6 +165,15 @@ td:first-child {
 }
 </style>
 </head>
+<script>
+function logout() {
+  localStorage.removeItem("studentId");
+  localStorage.removeItem("loggedIn");
+
+  // Redirect to login page
+  window.location.href = "login.html";
+}
+</script>
 
 <body>
 
@@ -172,7 +181,7 @@ td:first-child {
   <div><strong>Student Information System</strong></div>
   <div>
     Welcome 2022055080. You are logged in as student
-    <span style="color:#c60; cursor:pointer;">[Logout]</span>
+    <a href="#" onclick="logout()" style="color:#c60; text-decoration:none;">[Logout]</a>
   </div>
 </div>
 
@@ -183,7 +192,7 @@ td:first-child {
   <a href="#">My Accommodation</a>
   <a href="#">My Finances</a>
   <a href="#">My Registration</a>
-  <a href="results.html">My Results</a>
+  <a href="testresult.html">My Results</a>
   <a href="#">My Research</a>
   <a href="#">My E-Learning</a>
   <a href="#">My Exam Slip</a>
