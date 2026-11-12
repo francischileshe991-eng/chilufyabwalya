@@ -4,205 +4,88 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UNZA SIS | Login</title>
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f2f2f2;
+*{box-sizing:border-box}body{margin:0;font-family:"Segoe UI",Arial,sans-serif;color:#333;background:#eee;font-size:17px}button,input{font:inherit}button,a{ -webkit-tap-highlight-color:transparent}a{color:#006800;text-decoration:none}button{cursor:pointer}.topbar{min-height:64px;background:#006400;color:white;display:flex;align-items:center;justify-content:space-between;padding:0 20px;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-size:22px;color:white}.brand img{width:48px;height:60px;object-fit:contain}.navigation{display:flex;align-self:stretch}.navigation button{border:0;background:none;color:white;padding:0 19px;font-size:16px;white-space:nowrap}.navigation i{margin-right:10px}.navigation .active{background:#f0ad4e;border:1px solid #e99d12}.navigation button:hover{background:#087608}main{min-height:calc(100vh - 134px);padding:38px 24px 69px;display:flex;align-items:flex-start;justify-content:center}.card{width:960px;max-width:100%;min-height:652px;background:#fff;border-radius:145px 6px 145px 0;box-shadow:0 8px 30px #0002;display:grid;grid-template-columns:1fr 1fr;padding:12px 0 48px}.login,.right{padding:34px 47px 0 72px;text-align:center}.right{padding:34px 72px 0 46px;position:relative}.right:before{content:"";position:absolute;left:0;top:0;height:495px;width:1px;background:#eee}h2,h3{font-weight:400;color:#006800}h2{font-size:22px;margin:0 0 20px}h3{font-size:28px;margin:0 0 22px}.input-group{display:flex;height:41px;margin-bottom:24px}.input-group span{width:61px;flex-shrink:0;display:grid;place-items:center;background:#eee;border:1px solid #ccc;color:#59636b;font-size:16px}.input-group input{width:100%;min-width:0;background:#fffecd;border:1px solid #ccc;border-left:0;padding:9px 14px;box-shadow:inset 0 1px 2px #0001;color:#111;font-size:16px}input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #efa93d;outline-offset:3px}.captcha-row{display:flex;justify-content:center;align-items:center;gap:5px;margin:25px 0 27px}.captcha{width:144px;height:49px;background:#d3dde0;display:grid;place-items:center;color:#23334c;font:bold italic 28px Georgia,serif;letter-spacing:4px;text-decoration:line-through;background-image:repeating-linear-gradient(24deg,transparent 0 3px,#667d8955 4px 5px),repeating-linear-gradient(135deg,transparent 0 4px,#465d7b55 5px 6px)}.refresh{border:1px solid #83a55d;background:linear-gradient(#c5dfa7,#70a432);border-radius:50%;color:white;width:35px;height:35px;font-size:25px;line-height:1}.security{height:40px;width:100%;border:1px solid #ccc;padding:9px 15px;margin-bottom:24px;font-size:16px;box-shadow:inset 0 1px 2px #0001}.security::placeholder{color:#999}.action{display:block;width:100%;border:0;background:#006400;color:white;padding:10px 8px;min-height:41px;font-size:16px}.action:hover{background:#087608}.action i{margin-right:10px}.forgot{display:inline-block;margin-top:26px;background:none;border:0;padding:0;color:#006800;font-size:16px}.account{margin-top:26px;border-top:1px solid #eee;padding-top:24px}.account i{font-size:23px;vertical-align:middle}.right h2{margin-bottom:11px}.right p{font-size:17px;line-height:25px;margin:0 0 24px}.accommodation{margin-top:70px}.footer{background:#f5f5f5;min-height:70px;display:flex;align-items:center;justify-content:center;text-align:center;color:#888;font-size:14px;padding:20px}.help{position:fixed;right:25px;bottom:75px;background:white;width:335px;padding:17px;border-radius:14px;box-shadow:0 12px 25px #0003;font-size:16px}.help strong{display:block;line-height:24px;padding-right:10px}.help>a{display:block;font-weight:600;margin:9px 0 15px}.help .close{position:absolute;right:12px;top:8px;border:0;background:none;font-size:22px;color:#666}.qr-row{display:flex;align-items:center;gap:14px}.qr-row img{width:109px;height:109px}.qr-row a{font-size:14px}.message{font-size:14px;color:#a32916;margin:12px 0 0;line-height:1.4}.message:empty{display:none}
+@media(min-width:1500px){.card{transform:translateX(0)}}
+@media(max-width:1100px){.brand{font-size:18px}.navigation button{padding:0 10px}.help{position:relative;right:auto;bottom:auto;margin:0 24px 24px auto}main{min-height:auto}.login,.right{padding-left:35px;padding-right:35px}}
+@media(max-width:700px){.topbar{flex-wrap:wrap;padding:8px 16px 0;gap:8px}.brand{font-size:16px}.brand img{height:47px;width:37px}.navigation{width:100%;justify-content:center;min-height:44px}.navigation button{font-size:13px;padding:0 9px}.navigation i{margin-right:5px}main{padding:24px 16px}.card{grid-template-columns:1fr;border-radius:65px 6px 65px 0;padding-bottom:35px}.login,.right{padding:30px 24px 0}.right{margin-top:30px}.right:before{top:0;left:24px;right:24px;width:auto;height:1px}.accommodation{margin-top:35px}h2{font-size:21px}.help{width:calc(100% - 32px);margin:0 16px 24px}.footer{font-size:12px}}
+
+/* Let flex and grid children shrink on phones and tablets. */
+.brand { min-width: 0; }
+.brand img { flex-shrink: 0; }
+.brand span { overflow-wrap: anywhere; }
+.navigation { flex-wrap: wrap; }
+.navigation button { min-height: 44px; }
+.card { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.login, .right { min-width: 0; }
+.action { overflow-wrap: anywhere; line-height: 1.4; min-height: 44px; }
+.forgot { min-height: 44px; margin-top: 14px; }
+.help .close { min-width: 36px; min-height: 36px; right: 4px; top: 2px; }
+.help strong { padding-right: 24px; }
+.qr-row { flex-wrap: wrap; }
+@media (min-width: 701px) and (max-width: 1100px) {
+  .topbar { flex-wrap: wrap; padding-top: 8px; gap: 8px; }
+  .navigation { margin-left: auto; }
+}
+@media (max-width: 700px) {
+  .card { grid-template-columns: minmax(0, 1fr); }
+  .navigation { gap: 0; }
+  .navigation button { flex: 1 1 auto; }
+  .account { margin-top: 14px; }
+}
+@media (max-width: 360px) {
+  .login, .right { padding-left: 18px; padding-right: 18px; }
+  .navigation button { padding: 0 7px; }
+  .brand { font-size: 15px; }
 }
 
-/* Top bar */
-.topbar {
-  background: #0b6b0b;
-  color: white;
-  padding: 12px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.topbar span {
-  font-weight: bold;
-}
-
-/* Main card */
-.wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.card {
-  background: white;
-  width: 900px;
-  border-radius: 30px;
-  display: flex;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  overflow: hidden;
-}
-
-/* Left login */
-.login {
-  flex: 1;
-  padding: 40px;
-}
-
-.login h2 {
-  color: #0b6b0b;
-  text-align: center;
-}
-
-.login h3 {
-  text-align: center;
-}
-
-/* Inputs */
-.input-group {
-  display: flex;
-  margin-bottom: 15px;
-}
-
-.input-group span {
-  background: #eee;
-  padding: 10px;
-  width: 40px;
-  text-align: center;
-  border: 1px solid #ccc;
-  color: #555;
-}
-
-.input-group input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
-
-/* Button */
-button {
-  width: 100%;
-  padding: 12px;
-  background: #0b6b0b;
-  color: white;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #095a09;
-}
-
-.forgot {
-  text-align: center;
-  margin-top: 10px;
-  color: #0b6b0b;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-/* Right side */
-.right {
-  flex: 1;
-  padding: 40px;
-  background: #fff;
-}
-
-.right h3 {
-  color: #0b6b0b;
-}
-
-.right button {
-  margin-top: 10px;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 13px;
-  color: #666;
-}
+.navigation a{display:flex;align-items:center;justify-content:center;color:white;padding:0 19px;font-size:16px;min-height:44px;white-space:nowrap}
+.navigation a:hover{background:#087608}
+@media(max-width:1100px){.navigation a{padding:0 10px}}
+@media(max-width:700px){.navigation a{font-size:13px;padding:0 9px;flex:1 1 auto}.navigation{row-gap:2px}}
 </style>
+<link rel="stylesheet" href="mobile.css">
 </head>
-
 <body>
-
-<div class="topbar">
-  <span>University of Zambia - Student Information System</span>
-  <span>Login | Reset Password | FAQs | HELSB</span>
+<header class="topbar">
+<a class="brand" href="login.html"><img src="images/unza-logo.png" alt="UNZA crest"><span>University of Zambia - Student Information System</span></a>
+<nav class="navigation" aria-label="Main navigation">
+<a href="index.html">Dashboard</a>
+<a href="results.html">My Results</a>
+<button type="button" onclick="document.getElementById('studentId').focus()"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</button>
+<button type="button" onclick="showInfo('Password reset')"><i class="fa fa-lock" aria-hidden="true"></i>Reset Password</button>
+<button type="button" class="active" onclick="showInfo('FAQs')"><i class="fa fa-question-circle" aria-hidden="true"></i>FAQs</button>
+<button type="button" onclick="showInfo('HELSB')"><i class="fa fa-info-circle" aria-hidden="true"></i>HELSB</button>
+</nav>
+</header>
+<main><section class="card" aria-label="Student portal login">
+<div class="login">
+<h2>Current Students and Staff</h2><h3>Login</h3>
+<form id="loginForm">
+<div class="input-group"><span><i class="fa fa-user" aria-hidden="true"></i></span><input type="text" id="studentId" aria-label="Student ID or username" placeholder="Student ID / Username" autocomplete="username" required></div>
+<div class="input-group"><span><i class="fa fa-key" aria-hidden="true"></i></span><input type="password" id="password" aria-label="Password" placeholder="Password" autocomplete="current-password" required></div>
+<div class="captcha-row"><div class="captcha" id="captcha" aria-label="Security code"></div><button class="refresh" type="button" onclick="refreshCode()" aria-label="Refresh security code">⟳</button></div>
+<input class="security" id="securityCode" aria-label="Enter security code shown above" placeholder="Enter Security code shown above" autocomplete="off" required>
+<button class="action" type="submit"><i class="fa fa-user" aria-hidden="true"></i>Log In</button>
+<p class="message" id="message" role="status"></p>
+</form>
+<button class="forgot" onclick="showInfo('Password reset')">Forgot password?</button>
+<div class="account"><button class="action" onclick="showInfo('UNZA account sign-in')"><i class="fa fa-google" aria-hidden="true"></i>Login With Your UNZA Account</button></div>
 </div>
-
-<div class="wrapper">
-  <div class="card">
-
-    <!-- LEFT -->
-    <div class="login">
-      <h2>Current Students and Staff</h2>
-      <h3>Login</h3>
-
-      <div class="input-group">
-        <span><i class="fa fa-user"></i></span>
-        <input type="text" id="studentId" placeholder="Student ID / Username">
-      </div>
-
-      <div class="input-group">
-        <span><i class="fa fa-key"></i></span>
-        <input type="password" id="password" placeholder="Password">
-      </div>
-
-      <button onclick="login()">Log In</button>
-
-      <div class="forgot">Forgot password?</div>
-    </div>
-
-    <!-- RIGHT -->
-    <div class="right">
-      <h3>Prospective Students</h3>
-      <p>
-        You can apply online for admission, or check the status of your
-        application using the Online Application Portal (OAP).
-      </p>
-      <button>Apply Online</button>
-
-      <h3 style="margin-top:40px;">Accommodation Application</h3>
-      <p>
-        Apply online for accommodation using your UNZA student number.
-      </p>
-      <button>Apply for Accommodation</button>
-    </div>
-
-  </div>
+<div class="right">
+<section><h2>Prospective Students</h2><p>You can apply online for admission, or check the status of your application using the Online Application Portal (OAP)</p><button class="action" onclick="showInfo('Online applications')"><i class="fa fa-folder-open" aria-hidden="true"></i>Apply Online</button></section>
+<section class="accommodation"><h2>Accommodation Application</h2><p>You can apply online for accommodation. MAKE sure you enter correct and valid UNZA student number (STUDENT ID)</p><button class="action" onclick="showInfo('Accommodation applications')"><i class="fa fa-bed" aria-hidden="true"></i>Apply for Accommodation</button></section>
 </div>
-
-<div class="footer">
-  © 2025 - The University of Zambia - Student Information System v2.0.Revision
-</div>
-
+</section></main>
+<aside class="help" id="registrationHelp" aria-label="Registration help"><button class="close" aria-label="Close registration help" onclick="document.getElementById('registrationHelp').hidden=true">×</button><strong>New students: how to register for courses</strong><a href="#" onclick="showInfo('Registration video');return false">Watch the video</a><div class="qr-row"><img src="images/registration-qr.png" alt="Registration QR code from the reference image"><a href="images/registration-qr.png" download="registration-qr.png">Download QR</a></div></aside>
+<footer class="footer">© 2026 - The University of Zambia - Student Information System v2.0.Revision:</footer>
 <script>
-function login() {
-  const id = document.getElementById("studentId").value;
-  const pass = document.getElementById("password").value;
-
-  if (id === "" || pass === "") {
-    alert("Please enter Student ID and Password");
-    return;
-  }
-
-  // DEMO AUTH (Student ID == Password)
-  if (id === pass) {
-    localStorage.setItem("loggedIn", "true");
-    localStorage.setItem("studentId", id);
-    window.location.href = "index.html";
-  } else {
-    alert("Invalid login credentials");
-  }
-}
+let securityCode;
+function refreshCode(){securityCode=Array.from({length:5},()=> 'abcdefghjkmnpqrstuvwxyz23456789'[Math.floor(Math.random()*31)]).join('');document.getElementById('captcha').textContent=securityCode;document.getElementById('securityCode').value='';}
+function showInfo(feature){document.getElementById('message').textContent=feature+' is not connected in this school project demo.';}
+function login(event){event.preventDefault();const id=document.getElementById('studentId').value.trim();const pass=document.getElementById('password').value;const message=document.getElementById('message');if(document.getElementById('securityCode').value.trim().toLowerCase()!==securityCode){message.textContent='Please enter the security code shown above.';return;}if(id!==pass){message.textContent='Demo login: use your Student ID as your password.';return;}localStorage.setItem('loggedIn','true');localStorage.setItem('studentId',id);window.location.href='index.html';}
+document.getElementById('loginForm').addEventListener('submit',login);refreshCode();
 </script>
-
 </body>
 </html>

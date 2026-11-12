@@ -1,0 +1,44 @@
+/* Shared phone layout; desktop reference layouts remain in each page. */
+html { -webkit-text-size-adjust: 100%; }
+@media (max-width: 700px) {
+  body { min-width: 0; }
+  .top-header, .topbar { padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+  .top-header > div, .brand, .brand span { min-width: 0; overflow-wrap: anywhere; }
+  .top-header > div:last-child { line-height: 1.6; }
+  .top-header a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px; }
+  .navbar, .navigation { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 8px; width: auto; }
+  .navbar { padding: 8px 16px; }
+  .navbar a, .navigation a, .navigation button { display: flex; align-items: center; justify-content: flex-start; min-width: 0; min-height: 44px; padding: 8px 10px; margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.35; white-space: normal; overflow-wrap: anywhere; text-shadow: none; border-radius: 3px; }
+  .navbar a, .navigation a { background: #ffffff0d; }
+  .navbar a[aria-current="page"] { background: #ffffff26; }
+  .topbar { display: flex; flex-direction: column; align-items: stretch; padding-bottom: 8px; }
+  .brand { width: 100%; font-size: 16px; line-height: 1.4; }
+  .navigation { width: 100%; margin: 0; }
+  .navigation i { flex-shrink: 0; }
+  main { padding: 20px 16px; }
+  .card { min-height: 0; }
+  .login .input-group { height: 46px; margin-bottom: 18px; }
+  .login .input-group span { width: 44px; }
+  .login input { font-size: 16px; }
+  .security { height: 46px; }
+  .refresh { width: 44px; height: 44px; flex-shrink: 0; }
+  .captcha-row { gap: 10px; }
+  .help { max-width: calc(100% - 32px); }
+  .help .close { width: 44px; height: 44px; }
+  .help strong { padding-right: 32px; }
+  .qr-row a { display: inline-flex; align-items: center; min-height: 44px; }
+  .container, .main, .student-info, .sidebar, .results-panel { min-width: 0; }
+  .container { padding-left: 16px; padding-right: 16px; }
+  .cards { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; margin-left: 0; margin-right: 0; }
+  .cards .green { grid-column: auto; }
+  .main { grid-template-columns: minmax(0, 1fr); }
+  .guide span { min-width: 0; overflow-wrap: anywhere; }
+  .results-scroll { width: 100%; }
+  .scroll-hint { display: block; }
+  .footer { overflow-wrap: anywhere; padding-bottom: max(20px, env(safe-area-inset-bottom)); }
+}
+@media (max-width: 360px) {
+  .navbar a, .navigation a, .navigation button { font-size: 13px; padding-left: 8px; padding-right: 8px; }
+  .student-number { font-size: 24px; }
+  .student-info td { font-size: 13px; }
+}
