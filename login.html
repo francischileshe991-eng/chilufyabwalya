@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UNZA SIS | Login</title>
+<script>
+// Some phone browsers retain the wide viewport from the results page.
+// Set this page's viewport explicitly before its layout is drawn.
+if (window.screen.width <= 767) {
+  document.querySelector('meta[name="viewport"]').setAttribute(
+    'content', 'width=' + window.screen.width + ', initial-scale=1.0'
+  );
+}
+</script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:"Segoe UI",Arial,sans-serif;color:#333;background:#eee;font-size:17px}button,input{font:inherit}button,a{ -webkit-tap-highlight-color:transparent}a{color:#006800;text-decoration:none}button{cursor:pointer}.topbar{min-height:64px;background:#006400;color:white;display:flex;align-items:center;justify-content:space-between;padding:0 20px;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-size:22px;color:white}.brand img{width:48px;height:60px;object-fit:contain}.navigation{display:flex;align-self:stretch}.navigation button{border:0;background:none;color:white;padding:0 19px;font-size:16px;white-space:nowrap}.navigation i{margin-right:10px}.navigation .active{background:#f0ad4e;border:1px solid #e99d12}.navigation button:hover{background:#087608}main{min-height:calc(100vh - 134px);padding:38px 24px 69px;display:flex;align-items:flex-start;justify-content:center}.card{width:960px;max-width:100%;min-height:652px;background:#fff;border-radius:145px 6px 145px 0;box-shadow:0 8px 30px #0002;display:grid;grid-template-columns:1fr 1fr;padding:12px 0 48px}.login,.right{padding:34px 47px 0 72px;text-align:center}.right{padding:34px 72px 0 46px;position:relative}.right:before{content:"";position:absolute;left:0;top:0;height:495px;width:1px;background:#eee}h2,h3{font-weight:400;color:#006800}h2{font-size:22px;margin:0 0 20px}h3{font-size:28px;margin:0 0 22px}.input-group{display:flex;height:41px;margin-bottom:24px}.input-group span{width:61px;flex-shrink:0;display:grid;place-items:center;background:#eee;border:1px solid #ccc;color:#59636b;font-size:16px}.input-group input{width:100%;min-width:0;background:#fffecd;border:1px solid #ccc;border-left:0;padding:9px 14px;box-shadow:inset 0 1px 2px #0001;color:#111;font-size:16px}input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #efa93d;outline-offset:3px}.captcha-row{display:flex;justify-content:center;align-items:center;gap:5px;margin:25px 0 27px}.captcha{width:144px;height:49px;background:#d3dde0;display:grid;place-items:center;color:#23334c;font:bold italic 28px Georgia,serif;letter-spacing:4px;text-decoration:line-through;background-image:repeating-linear-gradient(24deg,transparent 0 3px,#667d8955 4px 5px),repeating-linear-gradient(135deg,transparent 0 4px,#465d7b55 5px 6px)}.refresh{border:1px solid #83a55d;background:linear-gradient(#c5dfa7,#70a432);border-radius:50%;color:white;width:35px;height:35px;font-size:25px;line-height:1}.security{height:40px;width:100%;border:1px solid #ccc;padding:9px 15px;margin-bottom:24px;font-size:16px;box-shadow:inset 0 1px 2px #0001}.security::placeholder{color:#999}.action{display:block;width:100%;border:0;background:#006400;color:white;padding:10px 8px;min-height:41px;font-size:16px}.action:hover{background:#087608}.action i{margin-right:10px}.forgot{display:inline-block;margin-top:26px;background:none;border:0;padding:0;color:#006800;font-size:16px}.account{margin-top:26px;border-top:1px solid #eee;padding-top:24px}.account i{font-size:23px;vertical-align:middle}.right h2{margin-bottom:11px}.right p{font-size:17px;line-height:25px;margin:0 0 24px}.accommodation{margin-top:70px}.footer{background:#f5f5f5;min-height:70px;display:flex;align-items:center;justify-content:center;text-align:center;color:#888;font-size:14px;padding:20px}.help{position:fixed;right:25px;bottom:75px;background:white;width:335px;padding:17px;border-radius:14px;box-shadow:0 12px 25px #0003;font-size:16px}.help strong{display:block;line-height:24px;padding-right:10px}.help>a{display:block;font-weight:600;margin:9px 0 15px}.help .close{position:absolute;right:12px;top:8px;border:0;background:none;font-size:22px;color:#666}.qr-row{display:flex;align-items:center;gap:14px}.qr-row img{width:109px;height:109px}.qr-row a{font-size:14px}.message{font-size:14px;color:#a32916;margin:12px 0 0;line-height:1.4}.message:empty{display:none}
@@ -45,8 +54,8 @@
 @media(max-width:1100px){.navigation a{padding:0 10px}}
 @media(max-width:700px){.navigation a{font-size:13px;padding:0 9px;flex:1 1 auto}.navigation{row-gap:2px}}
 </style>
-<link rel="stylesheet" href="mobile.css?v=20261112-2">
-<link rel="stylesheet" href="login-mobile.css?v=20261112-2">
+<link rel="stylesheet" href="mobile.css?v=20261112-3">
+<link rel="stylesheet" href="login-mobile.css?v=20261112-3">
 </head>
 <body class="login-page">
 <header class="topbar">
