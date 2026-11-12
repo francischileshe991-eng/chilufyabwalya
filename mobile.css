@@ -42,3 +42,67 @@ html { -webkit-text-size-adjust: 100%; }
   .student-number { font-size: 24px; }
   .student-info td { font-size: 13px; }
 }
+
+/* The reference SIS uses a desktop overview for authenticated pages.
+   Their 1000px viewport scales to the phone; pinch zoom remains available. */
+@media (min-width: 701px) and (max-width: 1100px) {
+  .sis-overview .top-header { margin: 0 14px; padding: 4px; font-size: 13px; gap: 8px; }
+  .sis-overview .top-header > div:last-child { font-size: 12px; }
+  .sis-overview .navbar { margin: 0 14px; gap: 0 16px; }
+  .sis-overview .navbar a { font: 15px Arial, Helvetica, sans-serif; min-height: 24px; line-height: 24px; text-shadow: 1px 1px 2px #444; }
+  .sis-overview .container { padding: 60px 5.3% 0; }
+  .sis-overview .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; margin: 0 18px 60px; }
+  .sis-overview .cards .green { grid-column: auto; min-height: 620px; }
+  .sis-overview .cards .card { font-size: 14px; line-height: 22px; padding: 24px 14px; }
+  .sis-overview .cards h3 { font-size: 14px; }
+  .sis-overview .main { grid-template-columns: minmax(0, 1fr); margin: 0 -40px; }
+  .sis-overview .sidebar { margin: 40px 0 0; }
+  .sis-overview .student-number { font-size: 40px; }
+  .sis-overview .results-panel table { min-width: 0; table-layout: fixed; }
+  .sis-overview .results-panel th { white-space: normal; font-size: 14px; }
+  .sis-overview .results-panel td { font-size: 12px; line-height: 1.6; overflow-wrap: anywhere; }
+  .sis-overview .results-panel .comment { white-space: normal; }
+  .sis-overview .results-panel th:nth-child(1) { width: 11%; }
+  .sis-overview .results-panel th:nth-child(2) { width: 28%; }
+  .sis-overview .results-panel th:nth-child(3) { width: 9%; }
+  .sis-overview .results-panel th:nth-child(4) { width: 30%; }
+  .sis-overview .results-panel th:nth-child(5) { width: 6%; }
+  .sis-overview .results-panel th:nth-child(6) { width: 16%; }
+  .sis-overview .scroll-hint { display: none; }
+}
+.menu-toggle, .login-notice { display: none; }
+@media (max-width: 700px) {
+  .topbar { flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 0 16px; min-height: 58px; gap: 0; }
+  .brand { width: auto; }
+  .brand span { display: none; }
+  .brand img { width: 46px; height: 58px; }
+  .menu-toggle { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 44px; height: 44px; padding: 8px; border: 0; background: transparent; cursor: pointer; }
+  .menu-toggle span { display: block; width: 26px; height: 2px; background: #ddd; border-radius: 2px; }
+  .navigation { display: none; flex-basis: 100%; padding: 8px 0; }
+  .navigation.is-open { display: grid; }
+  .login-notice { display: block; position: relative; margin-top: 14px; padding: 16px 40px 16px 17px; background: #fcf8e3; color: #8a7a50; border: 1px solid #faebcc; line-height: 24px; font-size: 16px; }
+  .login-notice[hidden] { display: none; }
+  .login-notice button { position: absolute; right: 4px; top: 5px; border: 0; background: transparent; color: #c9c4b0; font-size: 24px; width: 44px; height: 44px; }
+  main { padding: 46px 0 58px; }
+  .card { width: 100%; max-width: 100%; border-radius: 125px 0 125px 0; padding: 12px 0 44px; }
+  .login, .right { padding: 30px 8.3% 0; }
+  .login h2, .right h2 { font-size: 20px; font-weight: 600; line-height: 1.4; }
+  .login h2 { margin-bottom: 20px; }
+  .login h3 { font-size: 28px; font-weight: 600; margin-bottom: 24px; }
+  .login .input-group { height: 40px; margin-bottom: 22px; }
+  .login .input-group span { width: 56px; }
+  .login .input-group input { background: white; padding-left: 14px; }
+  .security { height: 40px; padding-left: 14px; margin-bottom: 22px; }
+  .captcha-row { margin: 24px 0; gap: 5px; }
+  .refresh { width: 36px; height: 36px; }
+  .action { min-height: 40px; padding: 9px 8px; }
+  .forgot { margin-top: 14px; }
+  .account { margin-top: 16px; padding-top: 22px; }
+  .right { margin-top: 0; }
+  .right:before { display: none; }
+  .right p { font-size: 16px; line-height: 24px; margin-bottom: 24px; }
+  .right h2 { margin-bottom: 12px; }
+  .accommodation { margin-top: 30px; }
+  .help { display: none; }
+  .footer { font-size: 13px; line-height: 22px; }
+}

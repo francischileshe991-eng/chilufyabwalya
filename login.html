@@ -50,7 +50,8 @@
 <body>
 <header class="topbar">
 <a class="brand" href="login.html"><img src="images/unza-logo.png" alt="UNZA crest"><span>University of Zambia - Student Information System</span></a>
-<nav class="navigation" aria-label="Main navigation">
+<button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="loginNavigation" aria-expanded="false"><span></span><span></span><span></span></button>
+<nav class="navigation" id="loginNavigation" aria-label="Main navigation">
 <a href="index.html">Dashboard</a>
 <a href="results.html">My Results</a>
 <button type="button" onclick="document.getElementById('studentId').focus()"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</button>
@@ -59,6 +60,7 @@
 <button type="button" onclick="showInfo('HELSB')"><i class="fa fa-info-circle" aria-hidden="true"></i>HELSB</button>
 </nav>
 </header>
+<div class="login-notice" role="status">Please login to proceed.<button type="button" aria-label="Dismiss login notice" onclick="this.parentElement.hidden=true">×</button></div>
 <main><section class="card" aria-label="Student portal login">
 <div class="login">
 <h2>Current Students and Staff</h2><h3>Login</h3>
@@ -81,6 +83,21 @@
 <aside class="help" id="registrationHelp" aria-label="Registration help"><button class="close" aria-label="Close registration help" onclick="document.getElementById('registrationHelp').hidden=true">×</button><strong>New students: how to register for courses</strong><a href="#" onclick="showInfo('Registration video');return false">Watch the video</a><div class="qr-row"><img src="images/registration-qr.png" alt="Registration QR code from the reference image"><a href="images/registration-qr.png" download="registration-qr.png">Download QR</a></div></aside>
 <footer class="footer">© 2026 - The University of Zambia - Student Information System v2.0.Revision:</footer>
 <script>
+const menuToggle = document.querySelector('.menu-toggle');
+const loginNavigation = document.getElementById('loginNavigation');
+menuToggle.addEventListener('click', () => {
+  const expanded = menuToggle.getAttribute('aria-expanded') !== 'true';
+  menuToggle.setAttribute('aria-expanded', String(expanded));
+  menuToggle.setAttribute('aria-label', expanded ? 'Close navigation' : 'Open navigation');
+  loginNavigation.classList.toggle('is-open', expanded);
+});
+loginNavigation.addEventListener('click', event => {
+  if (event.target.closest('a, button')) {
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open navigation');
+    loginNavigation.classList.remove('is-open');
+  }
+});
 let securityCode;
 function refreshCode(){securityCode=Array.from({length:5},()=> 'abcdefghjkmnpqrstuvwxyz23456789'[Math.floor(Math.random()*31)]).join('');document.getElementById('captcha').textContent=securityCode;document.getElementById('securityCode').value='';}
 function showInfo(feature){document.getElementById('message').textContent=feature+' is not connected in this school project demo.';}
